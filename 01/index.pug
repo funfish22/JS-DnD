@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title JS地下城--01
+
+        link(rel="stylesheet", href="css/style.css")
+        script(src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js")
+    body
+        #app
+            .container
+                .inner
+                    .col-4.mb-4
+                        .line
+                        h1.title 九九乘法表
+                        p.subtitle MULTIPLICATION CHART
+                        .line
+                    .col-4.border.mb-4(v-for="ul in 9" v-if="ul >= 2")
+                        ul.numInner
+                            li.num__title {{ul}}
+                            li.num__p(v-for="li in 9") {{ ul }} × {{li}} ＝ {{ul*li}}
+                    //- .col-4.border.mb-4
+                    //-     ul.numInner
+                    //-         li.num__title 2
+                    //-         li.num__p 2 × 1 ＝ 2
+                    //-         li.num__p 2 × 2 ＝ 4
+                    //-         li.num__p 2 × 3 ＝ 6
+                    //-         li.num__p 2 × 4 ＝ 8
+                    //-         li.num__p 2 × 5 ＝ 10
+                    //-         li.num__p 2 × 6 ＝ 12
+                    //-         li.num__p 2 × 7 ＝ 14
+                    //-         li.num__p 2 × 8 ＝ 16
+                    //-         li.num__p 2 × 9 ＝ 18
+                    //- .col-4.border.mb-4
+                    //-     ul.numInner
+                    //-         li.num__title 2
+                    //-         li.num__p 2 × 1 ＝ 2
+                    //-         li.num__p 2 × 2 ＝ 4
+                    //-         li.num__p 2 × 3 ＝ 6
+                    //-         li.num__p 2 × 4 ＝ 8
+                    //-         li.num__p 2 × 5 ＝ 10
+                    //-         li.num__p 2 × 6 ＝ 12
+                    //-         li.num__p 2 × 7 ＝ 14
+                    //-         li.num__p 2 × 8 ＝ 16
+                    //-         li.num__p 2 × 9 ＝ 18
+        footer
+            p Copyright © 2019 HexSchool. All rights reserved.
+        script(src="./js/main-dist.js")
+        

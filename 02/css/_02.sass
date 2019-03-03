@@ -1,0 +1,212 @@
+$browser-default-font-size: 16px !default
+@function rem($px)  //rem可以改成你想使用的名稱
+    @return $px / $browser-default-font-size * 1rem
+
+@mixin rwdw($max)
+    @media only screen and (max-width: $max + px)  
+        @content
+    
+body
+    background-color: #293B29
+    position: relative
+    width: 100%
+    height: 100vh
+
+.clock
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 350px
+    height: 350px
+    background-color: #3D5A45
+    border-radius: 72px
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    box-shadow: 0px 3px 50px rgba(0,0,0,.3)
+    &-inner
+        border-radius: 50%
+        width: 310px
+        height: 310px
+        border: 3px solid #212F0B
+        background-color: #293B29
+        position: relative
+
+.line
+    height: 24px
+    width: 1px
+    background-color: #FF7600
+    top: 20px
+    left: 50%
+    position: absolute
+    transform-origin: center 130px
+    &:after,&:before
+        font-family: 'Segoe UI'
+        color: #fff
+        position: absolute
+        left: 50%
+        // margin-left: -1.2px
+    &:after
+        bottom: -18px
+    &:before
+        top: -18px
+    &:nth-of-type(1)
+        &:after
+            content: '12'
+            transform: translateX(-50%) scale(0.83333)
+            margin-left: 0
+        &:before
+            content: '24'
+            transform: translateX(-50%) scale(0.83333)
+            margin-left: 0
+    &:nth-of-type(2)
+        &:after
+            content: '1'
+            transform: translateX(-50%) scale(0.83333) rotate(-30deg)
+        &:before
+            content: '13'
+            transform: translateX(-50%) scale(0.83333) rotate(-30deg)
+    &:nth-of-type(3)
+        &:after
+            content: '2'
+            transform: translateX(-50%) scale(0.83333) rotate(-60deg)
+        &:before
+            content: '14'
+            transform: translateX(-50%) scale(0.83333) rotate(-60deg)
+    &:nth-of-type(4)
+        &:after
+            content: '3'
+            transform: translateX(-50%) scale(0.83333) rotate(-90deg)
+        &:before
+            content: '15'
+            transform: translateX(-50%) scale(0.83333) rotate(-90deg)
+    &:nth-of-type(5)
+        &:after
+            content: '4'
+            transform: translateX(-50%) scale(0.83333) rotate(-120deg)
+        &:before
+            content: '16'
+            transform: translateX(-50%) scale(0.83333) rotate(-120deg)
+    &:nth-of-type(6)
+        &:after
+            content: '5'
+            transform: translateX(-50%) scale(0.83333) rotate(-150deg)
+        &:before
+            content: '17'
+            transform: translateX(-50%) scale(0.83333) rotate(-150deg)
+    &:nth-of-type(7)
+        &:after
+            content: '6'
+            transform: translateX(-50%) scale(0.83333) rotate(-180deg)
+            margin-left: 0
+        &:before
+            content: '18'
+            transform: translateX(-50%) scale(0.83333) rotate(-180deg)
+            margin-left: 0
+    &:nth-of-type(8)
+        &:after
+            content: '7'
+            transform: translateX(-50%) scale(0.83333) rotate(-210deg)
+        &:before
+            content: '19'
+            transform: translateX(-50%) scale(0.83333) rotate(-210deg)
+    &:nth-of-type(9)
+        &:after
+            content: '8'
+            transform: translateX(-50%) scale(0.83333) rotate(-240deg)
+        &:before
+            content: '20'
+            transform: translateX(-50%) scale(0.83333) rotate(-240deg)
+    &:nth-of-type(10)
+        &:after
+            content: '9'
+            transform: translateX(-50%) scale(0.83333) rotate(-270deg)
+        &:before
+            content: '21'
+            transform: translateX(-50%) scale(0.83333) rotate(-270deg)
+    &:nth-of-type(11)
+        &:after
+            content: '10'
+            transform: translateX(-50%) scale(0.83333) rotate(-300deg)
+        &:before
+            content: '22'
+            transform: translateX(-50%) scale(0.83333) rotate(-300deg)
+    &:nth-of-type(12)
+        &:after
+            content: '11'
+            transform: translateX(-50%) scale(0.83333) rotate(-330deg)
+        &:before
+            content: '23'
+            transform: translateX(-50%) scale(0.83333) rotate(-330deg)
+
+.dot
+    width: 2px
+    height: 2px
+    border-radius: 50%
+    background-color: #fff
+    top: 29px
+    left: 50%
+    position: absolute
+    transform-origin: center 121px
+
+.minline
+    width: 8px
+    height: 96px
+    background-color: #FF7600
+    border-radius: 4px
+    top: calc(50% - 12px)
+    left: 50%
+    transform: translateX(-50%) rotate(180deg)
+    position: absolute
+    transform-origin: center 10px
+    &:after
+        position: absolute
+        width: 4px
+        height: 4px
+        background-color: #fff
+        border-radius: 50%
+        content: ''
+        top: 5px
+        left: 50%
+        transform: translateX(-50%)
+    &:before
+        position: absolute
+        width: 1px
+        height: 32px
+        background-color: #fff
+        content: ''
+        left: 50%
+        top: 5px
+        transform: translateX(-50%)
+
+.hourline
+    width: 8px
+    height: 72px
+    background-color: #fff
+    border-radius: 4px 4px 0px 0px
+    top: 50%
+    left: 50%
+    transform: translateX(-50%) rotate(210deg)
+    position: absolute
+    transform-origin: center 0px
+    &:after
+        content: ''
+        height: 20px
+        width: 2px
+        position: absolute
+        top: 45px
+        right: 50%
+        margin-right: -1px
+        background-color: #293B29
+
+.secline
+    background-image: url(../img/second-hand.svg)
+    width: 12px
+    height: 126px
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translateX(-50%) rotate(210deg)
+    transform-origin: center 0px
+    

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>JS地下城--01</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="container">
+        <div class="inner">
+          <div class="col-4 mb-4">
+            <div class="line"></div>
+            <h1 class="title">九九乘法表</h1>
+            <p class="subtitle">MULTIPLICATION CHART</p>
+            <div class="line"></div>
+          </div>
+          <div class="col-4 border mb-4" v-for="ul in 9" v-if="ul &gt;= 2">
+            <ul class="numInner">
+              <li class="num__title">{{ul}}</li>
+              <li class="num__p" v-for="li in 9">{{ ul }} × {{li}} ＝ {{ul*li}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>Copyright © 2019 HexSchool. All rights reserved.</p>
+    </footer>
+    <script src="./js/main-dist.js"></script>
+  </body>
+</html>
